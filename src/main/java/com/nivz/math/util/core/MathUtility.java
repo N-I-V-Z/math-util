@@ -32,8 +32,13 @@ public class MathUtility {
             throw new IllegalArgumentException("Invalid n. n must be between 0 and 20");
         if (n==0 || n==1)
             return 1;
-        for (int i=1;i<=n;i++)
-            product *= i; //thuật toán nhân dồn, con heo đất
-        return product;
+        return n * getFactorial(n-1);
+        // recursion - đệ qui - gọi lại chính mình với 1 qui mô khác
     }
 }
+
+// 5! = 4! . 5
+// 4! = 3! . 4
+// ...
+// n! = n . (n-1)!
+
